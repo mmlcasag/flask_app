@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <h1>{% block h1 %}{% endblock %}</h1>
+        {% block content %}
+            <h3>This is the default content from the base form</h3>
+        {% endblock %}
+    </body>
+</html>

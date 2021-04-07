@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Flask App
+{% endblock %}
+
+{% block h1 %}
+    Hello {{ name }}, you are on the home page!
+{% endblock %}
+
+{% block content %}
+    {% if display %}
+        <h3>This is being displayed</h3>
+    {% else %}
+        <h3>This is not being displayed</h3>
+    {% endif %}
+
+    <ul>
+    {% for x in myList %}
+        <li>{{ x }}</li>
+    {% endfor %}
+    </ul>
+
+    <ul>
+    {% for x in myDictList %}
+        <li>{{ x.name }}</li>
+    {% endfor %}
+    </ul>
+
+    <h3>Straight from the database!</h3>
+    <ul>
+    {% for item in results %}
+        <li>{{ item.id }} - {{ item.name }} - {{ item.location }}</li>
+    {% endfor %}
+    </ul>
+
+    <img src="{{ url_for('static', filename='prettyprinted.jpg') }}">
+    {% include 'include_this.html' %}
+{% endblock %}
